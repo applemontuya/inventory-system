@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% block title%}Add Recipe{% endblock %}
+{% block content%}
+<br><br/>
+<h3 align="center">Update Inventory Item</h3>
+<br/>
+<p align="center" style="color: green">
+    {% if message != None %}
+        {{ message }}
+    {% endif %}
+</p>
+<div align="center" class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <form method="post" action="">
+            <div class="form-group row">
+                <div class="col-5" align="right"><label>Name</label></div>
+                <div class="col" aria-disabled="true" align="left">{{ template_form.name_field(readonly="readonly")}}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5" align="right"><label>Unit</label></div>
+                <div class="col" align="left" aria-disabled="true">{{template_form.unit_field(readonly="readonly")}}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5" align="right"><label>Quantity</label></div>
+                <div class="col" align="left"> {{template_form.quantity_field}}</div>
+            </div>
+            <input class="btn btn-outline-info" type=submit value="Update">
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}
+

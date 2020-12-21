@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+{% block title%}Inventory{% endblock %}
+{% block content%}
+<br>
+<h3 align="center">Inventory list</h3>
+<div align="center" class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in item_list%}
+            <tr>
+                {% for value in i %}
+                <td>{{value}}</td>
+                {% endfor %}
+                <td>
+                    <a  class="info" href="/view-item/{{i[0]}}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div align="right">
+            <a type="button" class="btn btn-sm btn-info" href="/add-item">Add new item</a>
+        </div>
+
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}
+

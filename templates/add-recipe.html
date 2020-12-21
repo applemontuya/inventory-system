@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% block title%}Add Recipe{% endblock %}
+{% block content%}
+<br>
+<h3 align="center">Add Recipe</h3>
+
+<p align="center" style="color: green">
+    {% if message != None %}
+        {{ message }}
+    {% endif %}
+</p>
+<div align="center" class="row">
+    <div class="col-2"></div>"
+    <div class="col">
+        <form method="post" action="" enctype="multipart/form-data">
+           <div class="form-group row">
+               <div class="col-5" align="right"><label>Name</label></div>
+               <div>{{ template_form.name_field}}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5" align="right"><label>Upload file</label></div>
+                <div>{{ template_form.file_field}}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5"></div>
+                <div class="col" align="left"><input type=submit value="Upload Recipe"></div>
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}
+

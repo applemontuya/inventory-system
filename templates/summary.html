@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+{% block title%}Report{% endblock %}
+{% block content%}
+<br><br>
+<h3 align="center">Estimate Summary</h3>
+<br>
+<div align="center" class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Ingredients</th>
+                <th scope="col">Inventory</th>
+                <th scope="col">What you need to order</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    {% for key, name in ingredients.items() %}
+                        {{name}} {{key}} <br>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for key, name in inventory.items() %}
+                        {{name}} {{key}} <br>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for key, name in to_order.items() %}
+                        {{name}} {{key}} <br>
+                    {% endfor %}
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}
+

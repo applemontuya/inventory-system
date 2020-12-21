@@ -1,0 +1,50 @@
+{% extends "base.html"%}
+{% block title%}Add Recipe{% endblock %}
+{% block content%}
+<br><br/>
+<h3 align="center">View Recipe</h3>
+<br/>
+<p align="center" style="color: green">
+    {% if message != None %}
+        {{ message }}
+    {% endif %}
+</p>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col" width="20%">Recipe Name</th>
+                <th scope="col" width="40%">Ingredients</th>
+                <th width="40%">Steps</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for i in recipe%}
+                <td>{{i | safe}} </td>
+                {% endfor %}
+            </tr>
+
+            </tbody>
+        </table>
+        <br>
+        <form method="post">
+            <p align="center">To estimate the ingredients needed</p>
+            <div class="form-group row">
+               <div class="col-5" align="right">
+                   <label>Enter number of servings</label>
+               </div>
+               <div>{{ template_form.servings_field}}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5"></div>
+                <div class="col" align="left"><input type=submit value="Estimate"></div>
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}
+

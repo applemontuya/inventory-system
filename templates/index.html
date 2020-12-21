@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+{% block title%}Calculate{% endblock %}
+{% block content%}
+<div class="container">
+    <br/><br/>
+    <div class="row">
+        <div class="col-6" align="right">
+            <a class="btn btn-outline-info" style="width: 18rem; height: 10rem; padding-top: 4rem;" href="/add-recipe">
+                <h6>Upload new recipe</h6>
+            </a>
+        </div>
+        <div class="col-6" align="left">
+            <a class="btn btn-outline-info" style="width: 18rem; height: 10rem; padding-top: 4rem" href="/recipes">
+                <h6>View recipe list</h6>
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6" align="right">
+            <a class="btn btn-outline-info" style="width: 18rem; height: 10rem; padding-top: 4rem" href="/add-recipe">
+                <h6>View inventory</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+
